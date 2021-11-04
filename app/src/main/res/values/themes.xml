@@ -24,6 +24,6 @@
 
     <style name="RowTitle">
         <item name="android:textSize">@dimen/xlarge_text</item>
-        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textColor">@color/title_dark_text_color</item>
     </style>
 </resources>

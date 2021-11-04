@@ -1,0 +1,22 @@
+<resources>
+    <!-- default dimens -->
+    <dimen name="xshort_distance">4dp</dimen>
+    <dimen name="short_distance">8dp</dimen>
+    <dimen name="medium_distance">16dp</dimen>
+    <dimen name="large_distance">24dp</dimen>
+    <dimen name="xlarge_distance">32dp</dimen>
+
+    <!-- text dimens -->
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="normal_text">14sp</dimen>
+    <dimen name="large_text">18sp</dimen>
+    <dimen name="xlarge_text">24sp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- view related dimens -->
+    <dimen name="fragment_users_list_empty_state_icon_size">200dp</dimen>
+    <dimen name="fragment_users_list_user_icon_size">80dp</dimen>
+
+    <dimen name="fragment_user_manipulation_profile_pic_size">120dp</dimen>
+</resources>

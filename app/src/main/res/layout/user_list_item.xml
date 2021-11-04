@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/medium_distance"
+    android:layout_marginHorizontal="@dimen/medium_distance">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_distance">
+
+        <ImageView
+            android:id="@+id/iv_user_profile_pic"
+            android:layout_width="@dimen/fragment_users_list_user_icon_size"
+            android:layout_height="@dimen/fragment_users_list_user_icon_size"
+            tools:src="@drawable/ic_default_profile_pic"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            style="@style/RowTitle"
+            android:id="@+id/tv_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Name"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginHorizontal="@dimen/short_distance"
+            app:layout_constraintTop_toTopOf="@id/iv_user_profile_pic"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_user_bio"/>
+
+        <TextView
+            android:id="@+id/tv_user_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Bio"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginHorizontal="@dimen/short_distance"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile_pic"
+            app:layout_constraintBottom_toBottomOf="@id/iv_user_profile_pic"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

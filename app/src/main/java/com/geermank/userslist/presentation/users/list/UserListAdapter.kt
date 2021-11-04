@@ -3,6 +3,8 @@ package com.geermank.userslist.presentation.users.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.geermank.userslist.R
 import com.geermank.userslist.databinding.UserListItemBinding
@@ -52,6 +54,18 @@ class UserListAdapter(
 
 class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+    private val tvUserName: TextView
+    private val tvUserBio: TextView
+    private val ivUserProfilePic: ImageView
+
+    init {
+        UserListItemBinding.bind(view).run {
+            this@UserViewHolder.tvUserName = tvUserName
+            this@UserViewHolder.tvUserBio = tvUserBio
+            this@UserViewHolder.ivUserProfilePic = ivUserProfilePic
+        }
+    }
+
     fun bind(user: UserUiModel, clickListener: ListItemClickListener<UserUiModel>) {
         setUpItemUi(user)
         itemView.setOnClickListener { clickListener.onItemClickListener(user) }
@@ -62,10 +76,10 @@ class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
     private fun setUpItemUi(user: UserUiModel) {
-        UserListItemBinding.bind(itemView).apply {
-            tvUserName.text = user.name
-            tvUserBio.setTextOrRemove(user.bio)
-            ivUserProfilePic.setProfilePicOrDefault(user.profilePic, R.drawable.ic_default_profile_pic)
+        user.run {
+            tvUserName.text = name
+            tvUserBio.setTextOrRemove(bio)
+            ivUserProfilePic.setProfilePicOrDefault(profilePic, R.drawable.ic_default_profile_pic)
         }
     }
 }

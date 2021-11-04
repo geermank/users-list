@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class UsersListFragment : Fragment(), ListItemClickListener<UserUiModel> {
 
     private val viewModel: UsersListViewModel by viewModels()
-    private val adapter: UserListAdapter = UserListAdapter(emptyList(), this)
+    private val adapter: UserListAdapter = UserListAdapter(itemClickListener = this)
 
     private lateinit var binding: FragmentUsersListBinding
 

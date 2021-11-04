@@ -1,10 +1,6 @@
 package com.geermank.userslist.presentation.users.manipulation
 
-import android.content.ContentUris
-import android.database.Cursor
-import android.net.Uri
 import android.os.Bundle
-import android.provider.DocumentsContract
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -17,10 +13,8 @@ import com.geermank.userslist.presentation.changeVisibility
 import com.geermank.userslist.presentation.setTextIfEmpty
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import android.provider.MediaStore
 import com.geermank.userslist.presentation.setProfilePicOrDefault
 import com.geermank.userslist.utils.UriRealPath
-
 
 const val USER_ARGUMENT_KEY = "USER_MANIPULATION_USER_ARGUMENT_KEY"
 
@@ -94,8 +88,12 @@ class UserManipulationFragment : Fragment() {
 
     private fun listenChangeProfilePicIntention() {
         binding.btnPickProfilePic.setOnClickListener {
-            openGalleryToChooseAProfilePic()
+            openGalleryToChooseProfilePic()
         }
+    }
+
+    private fun openGalleryToChooseProfilePic() {
+        getImageFromGalleryResult.launch("image/*")
     }
 
     private fun listenSaveChangesToUserIntention() {
@@ -105,10 +103,6 @@ class UserManipulationFragment : Fragment() {
                 binding.etUserBio.text.toString()
             )
         }
-    }
-
-    private fun openGalleryToChooseAProfilePic() {
-        getImageFromGalleryResult.launch("image/*")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

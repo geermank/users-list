@@ -57,11 +57,11 @@ class UserManipulationViewModel @Inject constructor(
         editableUserValue.newName = name
         editableUserValue.newBio = bio
         runCoroutine {
-            val manipulationResult = performUserManipulationUseCase.execute(editableUserValue)
-            if (!manipulationResult) {
-                notifyError(R.string.error_cannot_save_user)
-            } else {
+            val successfulManipulationResult = performUserManipulationUseCase.execute(editableUserValue)
+            if (successfulManipulationResult) {
                 notifySuccessAndGoToUsersList()
+            } else {
+                notifyError(R.string.error_cannot_save_user)
             }
         }
     }

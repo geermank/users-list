@@ -2,6 +2,7 @@ package com.geermank.userslist.presentation.users.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
+import com.geermank.userslist.domain.usecase.DeleteUserUseCase
 import com.geermank.userslist.domain.usecase.GetAllUsersUseCase
 import com.geermank.userslist.presentation.BaseViewModel
 import com.geermank.userslist.presentation.users.model.UserUiModel

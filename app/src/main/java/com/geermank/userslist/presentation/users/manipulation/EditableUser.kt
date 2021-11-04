@@ -13,8 +13,6 @@ open class EditableUser(
     var newProfilePic: String? = ""
 ) : Parcelable {
 
-    fun toUiUserModel() = UserUiModel(id, newName, newBio, newProfilePic)
-
     constructor(userUiModel: UserUiModel) : this(
         userUiModel.id,
         userUiModel.name,
